@@ -1,0 +1,7 @@
+
+
+#n201248i
+node_modules
+bun.lock
+*.dev
+*.data
