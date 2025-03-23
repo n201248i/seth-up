@@ -13,3 +13,7 @@ It will
 ``` bash
 curl -fsSL https://raw.githubusercontent.com/n201248i/seth-up/refs/heads/main/container.sh | bash
 ```
+
+``` bash
+curl -fsSL https://raw.githubusercontent.com/n201248i/seth-up/refs/heads/main/project.sh | bash
+```

@@ -11,6 +11,7 @@ if [ ! -f "package.json" ]; then
 fi
 
 bun add -d eslint @eslint/js
+bun add -d @types/bun
 bun add -d @types/node
 
 # Download settings.json and force overwrite if it exists
