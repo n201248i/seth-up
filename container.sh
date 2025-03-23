@@ -25,5 +25,3 @@ if ! grep -q "^#n201248i$" .gitignore; then
     printf "*.dev\n" >> .gitignore
     printf "*.data\n" >> .gitignore
 fi
-
-bun init -y
