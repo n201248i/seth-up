@@ -13,7 +13,8 @@ fi
 bun add -d eslint @eslint/js typescript typescript-eslint eslint-plugin-react
 bun add -d husky
 bunx husky init
-echo "npm lint" > .husky/pre-commit
+echo "bun lint ." > .husky/pre-commit
+echo "bun test" > .husky/pre-commit
 
 bun add -d @types/bun
 bun add -d @types/node
