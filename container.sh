@@ -1,3 +1,5 @@
+apt update
+
 if ! command -v bun &> /dev/null; then
     echo "bun is not installed"
     curl -fsSL https://bun.sh/install | bash
@@ -20,13 +22,13 @@ fi
 
 if ! command -v git &> /dev/null; then
     echo "git is not installed"
-    exit 1
+    sudo apt install git
 fi
 
-if ! grep -q "^#n201248i$" .gitignore; then
-    printf "\n\n#n201248i\n" >> .gitignore
-    printf "node_modules\n" >> .gitignore
-    printf "bun.lock\n" >> .gitignore
-    printf "*.dev\n" >> .gitignore
-    printf "*.data\n" >> .gitignore
+# Check if SSH ED25519 key exists, if not, generate one
+if [ ! -f "$HOME/.ssh/id_ed25519" ]; then
+    echo "SSH ED25519 key does not exist, generating one"
+    ssh-keygen -t ed25519 -f "$HOME/.ssh/id_ed25519" -N ""
+    echo "Here is the public part of the SSH ED25519 key:"
+    cat "$HOME/.ssh/id_ed25519.pub"
 fi
