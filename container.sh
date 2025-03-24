@@ -26,7 +26,7 @@ fi
 # Check if SSH ED25519 key exists, if not, generate one
 if [ ! -f "$HOME/.ssh/id_ed25519" ]; then
     echo "SSH ED25519 key does not exist, generating one"
-    ssh-keygen -t ed25519 -f "$HOME/.ssh/id_ed25519" -N ""
+    sudo ssh-keygen -t ed25519 -f "$HOME/.ssh/id_ed25519" -N ""
     echo "Here is the public part of the SSH ED25519 key:"
     cat "$HOME/.ssh/id_ed25519.pub"
 fi
