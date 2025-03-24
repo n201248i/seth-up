@@ -1,22 +1,20 @@
-apt update
+sudo apt update
 
 if ! command -v bun &> /dev/null; then
     echo "bun is not installed"
-    curl -fsSL https://bun.sh/install | bash
+    sudo curl -fsSL https://bun.sh/install | bash
 fi
 
 if ! command -v node &> /dev/null; then
     echo "node is not installed"
     # Download and install nvm:
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | bash
+    sudo curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | bash
     # in lieu of restarting the shell
-    \. "$HOME/.nvm/nvm.sh"
-    # Download and install Node.js:
-    nvm install 22
-    # Verify the Node.js version:
-    node -v # Should print "v22.14.0".
-    nvm current # Should print "v22.14.0".
+    sudo \. "$HOME/.nvm/nvm.sh"
+    sudo nvm install 22
+    sudo nvm current # Should print "v22.14.0".
     # Verify npm version:
+    node -v # Should print "v22.14.0".
     npm -v # Should print "10.9.2".
 fi
 
@@ -32,3 +30,5 @@ if [ ! -f "$HOME/.ssh/id_ed25519" ]; then
     echo "Here is the public part of the SSH ED25519 key:"
     cat "$HOME/.ssh/id_ed25519.pub"
 fi
+
+exec $SHELL
