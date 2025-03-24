@@ -30,4 +30,5 @@
     "editor.minimap.enabled": false,
     "typescript.updateImportsOnFileMove.enabled": "always",
     "editor.dropIntoEditor.preferences": [],
+    "workbench.colorTheme": "Tomorrow Night Blue",
 }
